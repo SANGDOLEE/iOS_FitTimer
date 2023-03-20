@@ -43,8 +43,8 @@ class SettingViewController: UIViewController {
         self.configureCollectionView()
         
         self.configureCalendar()
-        self.startDayOfTheWeek()
-        self.endDate()
+        //self.startDayOfTheWeek()
+        //self.endDate()
         self.updateTitle()
         self.updateDays()
         self.updateCalendar()

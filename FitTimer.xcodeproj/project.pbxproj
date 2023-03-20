@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1F1550BD29BF090E0004B31B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1550BC29BF090E0004B31B /* CalendarCollectionViewCell.swift */; };
+		1F6675E829C83272005FB167 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675E729C83272005FB167 /* MemoListTableViewController.swift */; };
+		1F6675EA29C83405005FB167 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675E929C83405005FB167 /* ComposeViewController.swift */; };
+		1F6675EC29C83533005FB167 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675EB29C83533005FB167 /* UIViewController+alert.swift */; };
+		1F6675EE29C83B3F005FB167 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675ED29C83B3F005FB167 /* DetailViewController.swift */; };
+		1F6675F129C840F1005FB167 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675F029C840F1005FB167 /* DataManager.swift */; };
 		1F843EFD2994C981004776AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F843EFC2994C981004776AE /* AppDelegate.swift */; };
 		1F843EFF2994C981004776AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F843EFE2994C981004776AE /* SceneDelegate.swift */; };
 		1F843F072994C981004776AE /* FitTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F843F052994C981004776AE /* FitTimer.xcdatamodeld */; };
@@ -20,10 +25,6 @@
 		1F843F342994D686004776AE /* FitTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F843F332994D686004776AE /* FitTimerViewController.swift */; };
 		1F843F362994E74F004776AE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F843F352994E74F004776AE /* TabBarController.swift */; };
 		1F843F38299F5473004776AE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F843F37299F5472004776AE /* SettingViewController.swift */; };
-		1FC2A15129B468C000306108 /* MemoContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2A15029B468C000306108 /* MemoContents.swift */; };
-		1FF7421E29B9D9BA00D5FD7A /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7421D29B9D9BA00D5FD7A /* TableTableViewController.swift */; };
-		1FF7422029B9DCF300D5FD7A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7421F29B9DCF300D5FD7A /* AddViewController.swift */; };
-		1FF7422229B9DD0F00D5FD7A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7422129B9DD0F00D5FD7A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,11 @@
 
 /* Begin PBXFileReference section */
 		1F1550BC29BF090E0004B31B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F6675E729C83272005FB167 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
+		1F6675E929C83405005FB167 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		1F6675EB29C83533005FB167 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		1F6675ED29C83B3F005FB167 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1F6675F029C840F1005FB167 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1F843EF92994C981004776AE /* FitTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F843EFC2994C981004776AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F843EFE2994C981004776AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,10 +67,6 @@
 		1F843F332994D686004776AE /* FitTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTimerViewController.swift; sourceTree = "<group>"; };
 		1F843F352994E74F004776AE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1F843F37299F5472004776AE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		1FC2A15029B468C000306108 /* MemoContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoContents.swift; sourceTree = "<group>"; };
-		1FF7421D29B9D9BA00D5FD7A /* TableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
-		1FF7421F29B9DCF300D5FD7A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		1FF7422129B9DD0F00D5FD7A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F6675E629C831DF005FB167 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F6675EF29C840E3005FB167 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1F6675F029C840F1005FB167 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		1F843EF02994C981004776AE = {
 			isa = PBXGroup;
 			children = (
@@ -115,17 +132,19 @@
 		1F843EFB2994C981004776AE /* FitTimer */ = {
 			isa = PBXGroup;
 			children = (
+				1F6675EF29C840E3005FB167 /* Data */,
+				1F6675E629C831DF005FB167 /* Model */,
 				1F843EFC2994C981004776AE /* AppDelegate.swift */,
 				1F843EFE2994C981004776AE /* SceneDelegate.swift */,
 				1F843F352994E74F004776AE /* TabBarController.swift */,
 				1F843F332994D686004776AE /* FitTimerViewController.swift */,
-				1FF7421D29B9D9BA00D5FD7A /* TableTableViewController.swift */,
-				1FF7421F29B9DCF300D5FD7A /* AddViewController.swift */,
-				1FF7422129B9DD0F00D5FD7A /* DetailViewController.swift */,
-				1FC2A15029B468C000306108 /* MemoContents.swift */,
 				1F843F37299F5472004776AE /* SettingViewController.swift */,
 				1F1550BC29BF090E0004B31B /* CalendarCollectionViewCell.swift */,
+				1F6675E729C83272005FB167 /* MemoListTableViewController.swift */,
+				1F6675E929C83405005FB167 /* ComposeViewController.swift */,
+				1F6675ED29C83B3F005FB167 /* DetailViewController.swift */,
 				1F843F312994D63D004776AE /* Main.storyboard */,
+				1F6675EB29C83533005FB167 /* UIViewController+alert.swift */,
 				1F843F082994C983004776AE /* Assets.xcassets */,
 				1F843F0A2994C983004776AE /* LaunchScreen.storyboard */,
 				1F843F0D2994C983004776AE /* Info.plist */,
@@ -284,15 +303,16 @@
 			files = (
 				1F843F342994D686004776AE /* FitTimerViewController.swift in Sources */,
 				1F843F072994C981004776AE /* FitTimer.xcdatamodeld in Sources */,
-				1FF7422029B9DCF300D5FD7A /* AddViewController.swift in Sources */,
 				1F843F362994E74F004776AE /* TabBarController.swift in Sources */,
+				1F6675EE29C83B3F005FB167 /* DetailViewController.swift in Sources */,
 				1F843EFD2994C981004776AE /* AppDelegate.swift in Sources */,
 				1F843F38299F5473004776AE /* SettingViewController.swift in Sources */,
 				1F843EFF2994C981004776AE /* SceneDelegate.swift in Sources */,
-				1FF7422229B9DD0F00D5FD7A /* DetailViewController.swift in Sources */,
+				1F6675EA29C83405005FB167 /* ComposeViewController.swift in Sources */,
+				1F6675EC29C83533005FB167 /* UIViewController+alert.swift in Sources */,
 				1F1550BD29BF090E0004B31B /* CalendarCollectionViewCell.swift in Sources */,
-				1FF7421E29B9D9BA00D5FD7A /* TableTableViewController.swift in Sources */,
-				1FC2A15129B468C000306108 /* MemoContents.swift in Sources */,
+				1F6675E829C83272005FB167 /* MemoListTableViewController.swift in Sources */,
+				1F6675F129C840F1005FB167 /* DataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
