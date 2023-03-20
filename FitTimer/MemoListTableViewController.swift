@@ -11,7 +11,9 @@ class MemoListTableViewController: UITableViewController {
 
     let formatter: DateFormatter = {
         let f = DateFormatter()
-        f.dateStyle = .medium
+        f.dateStyle = .long
+        f.locale = Locale(identifier: "ko_KR")
+        f.setLocalizedDateFormatFromTemplate("MMM yyyy")
         f.timeStyle = .none
         return f
     }()
