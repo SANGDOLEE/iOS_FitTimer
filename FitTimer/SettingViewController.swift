@@ -79,7 +79,7 @@ class SettingViewController: UIViewController {
     private func configureTitleLabel(){
         self.contentView.addSubview(self.titleLabel)
         self.titleLabel.text = "2000년 01월"
-        self.titleLabel.font = .monospacedSystemFont(ofSize: 18, weight: .bold)
+        self.titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),

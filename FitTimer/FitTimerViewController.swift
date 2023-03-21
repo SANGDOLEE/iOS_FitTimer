@@ -14,6 +14,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var alarmOffImage: UIImageView!
     @IBOutlet weak var alarmOnImage: UIImageView!
     
+  
     var finishSetCount = 0
     var finishTimeCount = 0
     var finishHour = ""
@@ -73,6 +74,8 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         totalSetLabel.text="\(totalSetCount) sets"
         totalLabel.text="00:00:00"
         
+        
+        
         setClearText.layer.cornerRadius=20
         clear.layer.cornerRadius=20
         startStopButton.layer.cornerRadius=20
@@ -104,7 +107,6 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     // 알람 On 이미지 터치시 -> Off 하겠냐는
     @objc func alarmImageOnTapped() {
     
-        
         let alert = UIAlertController(title: "알림", message: "쉬는시간 종료 알림을 끄시겠습니까?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { _ in
@@ -116,7 +118,6 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             self.alarmOffImage.isHidden = false
             
         }))
-        
         self.present(alert,animated: true,completion: nil)
     }
     
@@ -188,10 +189,10 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         resetButton.setTitleColor(UIColor.systemGray2, for: .normal)
         resetButton.backgroundColor=UIColor.systemGray6
         resetButton.isEnabled=false
-        
+        setCountLabel.textColor = UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0)
         TimerLabel.textColor = UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0)
         workoutTimeLabel.textColor = UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0)
-        workoutTimeLabel.text="쉬는 시간"
+        workoutTimeLabel.text="휴식 시간"
         count2=A+B
         breakTimeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(breakTimer), userInfo: nil, repeats: true)
         
@@ -208,7 +209,6 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         else{ // 타이머가 시간을 계산중이 아니라면
             timerCounting = true
             totalSetLabel.isHidden=false
-            
             totalLabel.isHidden=false
             breakTimeLabel.layer.isHidden = true
             picker.layer.isHidden=true
@@ -283,6 +283,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             TimerLabel.textColor = UIColor.black
             workoutTimeLabel.textColor = UIColor.black
             workoutTimeLabel.text="운동 시간"
+            setCountLabel.textColor=UIColor.black
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
     }
@@ -333,6 +334,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         TimerLabel.textColor = UIColor.black
         workoutTimeLabel.textColor = UIColor.black
         workoutTimeLabel.text="운동 시간"
+        setCountLabel.textColor = UIColor.black
         
         // 스탑워치 초기화
         finishTimeCount = count3
@@ -358,7 +360,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         finishMin =  String(format:"%02d", (finishTimeCount%3600)/60)
         finishSec = String(format:"%02d", (finishTimeCount%3600)%60)
         finishTimeCount = 0
-        let alert = UIAlertController(title: "운동종료", message: "총 \(finishSetCount)세트 \(finishHour)시간 \(finishMin)분 \(finishSec)초\n 수고하셨습니다.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "운동종료", message: "총 \(finishSetCount)세트\n\(finishHour)시간 \(finishMin)분 \(finishSec)초", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "완료", style: .default, handler: { (_) in
             self.clear.isEnabled=false
         }))

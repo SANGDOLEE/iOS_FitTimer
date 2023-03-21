@@ -110,7 +110,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="운동일지" id="Axb-zw-Ylk">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="rTP-3y-zvs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rTP-3y-zvs">
                             <connections>
                                 <segue destination="HEg-r3-aW3" kind="show" id="1cN-64-pUt"/>
                             </connections>
@@ -409,7 +409,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUU-VC-Jp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="587"/>
+            <point key="canvasLocation" x="965" y="587"/>
         </scene>
         <!--운동기록-->
         <scene sceneID="d8B-wn-lhL">
