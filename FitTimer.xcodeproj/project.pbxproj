@@ -94,13 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F6675E629C831DF005FB167 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		1F6675EF29C840E3005FB167 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				1F6675EF29C840E3005FB167 /* Data */,
-				1F6675E629C831DF005FB167 /* Model */,
 				1F843EFC2994C981004776AE /* AppDelegate.swift */,
 				1F843EFE2994C981004776AE /* SceneDelegate.swift */,
 				1F843F352994E74F004776AE /* TabBarController.swift */,
