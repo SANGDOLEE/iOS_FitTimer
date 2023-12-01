@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F1550BD29BF090E0004B31B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1550BC29BF090E0004B31B /* CalendarCollectionViewCell.swift */; };
+		1F27E60A2B19C73F00B115E6 /* FitTimerAppLogo_누끼제거.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F27E6092B19C73F00B115E6 /* FitTimerAppLogo_누끼제거.png */; };
 		1F6675E829C83272005FB167 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675E729C83272005FB167 /* MemoListTableViewController.swift */; };
 		1F6675EA29C83405005FB167 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675E929C83405005FB167 /* ComposeViewController.swift */; };
 		1F6675EC29C83533005FB167 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6675EB29C83533005FB167 /* UIViewController+alert.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1F1550BC29BF090E0004B31B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F27E6092B19C73F00B115E6 /* FitTimerAppLogo_누끼제거.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FitTimerAppLogo_누끼제거.png"; sourceTree = "<group>"; };
 		1F6675E729C83272005FB167 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 		1F6675E929C83405005FB167 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		1F6675EB29C83533005FB167 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F27E6082B19C73400B115E6 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1F27E6092B19C73F00B115E6 /* FitTimerAppLogo_누끼제거.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		1F6675EF29C840E3005FB167 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		1F843EFB2994C981004776AE /* FitTimer */ = {
 			isa = PBXGroup;
 			children = (
+				1F27E6082B19C73400B115E6 /* Image */,
 				1F6675EF29C840E3005FB167 /* Data */,
 				1F843EFC2994C981004776AE /* AppDelegate.swift */,
 				1F843EFE2994C981004776AE /* SceneDelegate.swift */,
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F843F322994D63D004776AE /* Main.storyboard in Resources */,
+				1F27E60A2B19C73F00B115E6 /* FitTimerAppLogo_누끼제거.png in Resources */,
 				1F843F0C2994C983004776AE /* LaunchScreen.storyboard in Resources */,
 				1F843F092994C983004776AE /* Assets.xcassets in Resources */,
 			);
