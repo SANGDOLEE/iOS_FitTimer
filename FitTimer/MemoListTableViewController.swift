@@ -44,6 +44,7 @@ class MemoListTableViewController: UITableViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor=UIColor.systemGray6
@@ -64,7 +65,6 @@ class MemoListTableViewController: UITableViewController {
         return DataManager.shared.memoList.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
@@ -74,8 +74,6 @@ class MemoListTableViewController: UITableViewController {
 
         return cell
     }
-    
-
     
     // 목록 Swipe 삭제 구현
     // 편집 기능 활성화 = return true
@@ -101,8 +99,6 @@ class MemoListTableViewController: UITableViewController {
             
         }    
     }
-    
-
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -127,5 +123,4 @@ class MemoListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

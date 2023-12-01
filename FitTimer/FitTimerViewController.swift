@@ -14,33 +14,31 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var alarmOffImage: UIImageView!
     @IBOutlet weak var alarmOnImage: UIImageView!
     
-  
     var finishSetCount = 0
     var finishTimeCount = 0
     var finishHour = ""
     var finishMin = ""
     var finishSec = ""
     
-    var startTimer:Date? // background 들어가는 시간 기록하기 위해서 
+    var startTimer:Date? // background 들어가는 시간 기록하기 위해서
     
     var A = 0
     var B = 0
     var minZero = 0
     var secZero = 0
     @IBOutlet weak var picker: UIPickerView! // Picker
-
+    
     @IBOutlet weak var setCountLabel: UILabel! // ? 세트 종료
     var setCount = 0
     @IBOutlet weak var totalSetLabel: UILabel!
     var totalSetCount = 0
-    
     
     @IBOutlet weak var workoutTimeLabel: UILabel! // '운동시간'라벨
     @IBOutlet weak var breakTimeLabel: UILabel!
     let PICKER_VIEW_COLUMN = 1 //Picker View의 열의 개수를 1개로 지정
     var min: [String] = ["0","1","2","3","4","5","6","7","8","9"]
     var sec: [String] = ["00","05","10","15","20","25","30","35","40","45","50","55"]
- 
+    
     @IBOutlet weak var setClearText: UIButton! // 세트 초기화 버튼
     @IBOutlet weak var clear: UIButton! // 처음부터(초기화) 버튼
     
@@ -53,16 +51,17 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     var timer:Timer = Timer()
     var count:Int = 0
     var timerCounting:Bool = false
+    
     // 운동종료 쉬는시간 타이머
     var breakTimeTimer : Timer = Timer()
     var count2:Int = 0
     var timerCounting2:Bool = false
+    
     // 총 운동시간
     var totalTimeTimer : Timer = Timer()
     var count3: Int = 0
     var timerCounting3:Bool = false
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         resetButton.isEnabled = false
@@ -74,8 +73,6 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         totalSetLabel.text="\(totalSetCount) sets"
         totalLabel.text="00:00:00"
         
-        
-        
         setClearText.layer.cornerRadius=20
         clear.layer.cornerRadius=20
         startStopButton.layer.cornerRadius=20
@@ -83,7 +80,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         
         picker.delegate = self    //delegate 설정
         picker.dataSource = self    //delegate 설정
-    
+        
         // push 알림 구현
         alarmOffImage.isHidden=true
         alarmOnImage.isHidden=false
@@ -106,7 +103,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     // 알람 On 이미지 터치시 -> Off 하겠냐는
     @objc func alarmImageOnTapped() {
-    
+        
         let alert = UIAlertController(title: "알림", message: "쉬는시간 종료 알림을 끄시겠습니까?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { _ in
@@ -126,43 +123,44 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         alarmOffImage.isHidden = true
         alarmOnImage.isHidden = false
     }
-       //Picker View에서 선택할 수 있는 행의 개수를 정수 값으로 넘겨주는 delegate method
-       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-           if component == 0 {
-               return min.count
-           } else {
-               return sec.count
-           }
-       }
-        
-        // pickerView에 담긴 아이템의 컴포넌트 갯수
-        // pickerView는 여러 개의 wheel이 있을 수 있다.
-        // 여기서는 2개의 wheel을 가진 pickerView를 표현했다.
-        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 2
-        }
     
-       //각 열의 타이틀을 문자열로 넘겨주는 delegate method
-       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           if component == 0 {
-               return min[row]+" 분"
-           } else {
-               return sec[row]+" 초"
-           }
-       }
+    //Picker View에서 선택할 수 있는 행의 개수를 정수 값으로 넘겨주는 delegate method
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return min.count
+        } else {
+            return sec.count
+        }
+    }
+    
+    // pickerView에 담긴 아이템의 컴포넌트 갯수
+    // pickerView는 여러 개의 wheel이 있을 수 있다.
+    // 여기서는 2개의 wheel을 가진 pickerView를 표현했다.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    //각 열의 타이틀을 문자열로 넘겨주는 delegate method
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return min[row]+" 분"
+        } else {
+            return sec[row]+" 초"
+        }
+    }
     
     // picker의 선택된 값
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         switch component {
+        switch component {
         case 0:
-             if row == 0 {
-                 minZero = 1
-             }
+            if row == 0 {
+                minZero = 1
+            }
             A = row * 60
         case 1:
-             if row == 0 {
-                 secZero = 1
-             }
+            if row == 0 {
+                secZero = 1
+            }
             B = row * 5
         default:
             break;
@@ -170,11 +168,9 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         
     }
     
-    
     @IBAction func setClearTapped(_ sender: Any) {
         setCount=0
         setCountLabel.text = "\(setCount) 세트 종료"
-       
     }
     
     // 종료 버튼
@@ -195,17 +191,16 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         workoutTimeLabel.text="휴식 시간"
         count2=A+B
         breakTimeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(breakTimer), userInfo: nil, repeats: true)
-        
     }
     
-// 시작 버튼
+    // 시작 버튼
     @IBAction func startStopTapped(_ sender: UIButton) {
         if(timerCounting) // 타이머가 시간을 계산중이라면
-            {
+        {
             timerCounting = false // timerCounting은. false
             timer.invalidate() // 사용자가 startStop버튼을 탭하면 타이머를 중지하는 timer
             startStopButton.setTitleColor(UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0), for: .normal)
-            }
+        }
         else{ // 타이머가 시간을 계산중이 아니라면
             timerCounting = true
             totalSetLabel.isHidden=false
@@ -240,13 +235,11 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         return timeString
     }
     
-    
     // 쉬는시간 Timer
     @objc func breakTimer() -> Void {
         if count2 != 0 {
             count2 -= 1
         }
-    
         let time2 = breakTime(seconds:count2)
         let timeString2 = makeTimeString2(minutes:time2.0, seconds: time2.1)
         TimerLabel.text=timeString2
@@ -262,7 +255,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         if count2 == 0 { // 쉬는시간 끝나면 자동으로 운동시간 시작
-                            
+            
             // 쉬는시간 끝날때마다 push 알림
             if(alarmOnImage.isHidden == false){
                 let content = UNMutableNotificationContent()
@@ -287,9 +280,11 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
     }
+    
     func breakTime(seconds:Int) -> (Int, Int) {
         return ( ((seconds%3600)/60), ((seconds%3600)%60))
     }
+    
     func makeTimeString2(minutes:Int, seconds: Int) -> String {
         var timeString2 = ""
         timeString2+=String(format:"%02d", minutes)
@@ -305,9 +300,11 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         let timeString3 = makeTimeString3(hours: time3.0, minutes:time3.1, seconds: time3.2)
         totalLabel.text=timeString3
     }
+    
     func totalTime(seconds:Int) ->(Int, Int, Int) {
         return ( (seconds/3600),((seconds%3600)/60), ((seconds%3600)%60))
     }
+    
     func makeTimeString3(hours:Int, minutes:Int, seconds: Int) -> String{
         var timeString3 = ""
         timeString3+=String(format: "%02d", hours)
@@ -318,8 +315,7 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         return timeString3
     }
     
-    
-// 운동 종료
+    // 운동 종료
     @IBAction func clear(_ sender: Any) {
         
         // 기본 속성 설정
@@ -365,6 +361,5 @@ class FitTimerViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             self.clear.isEnabled=false
         }))
         self.present(alert, animated: true, completion: nil)
-    
     }
 }

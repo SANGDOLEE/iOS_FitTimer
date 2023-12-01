@@ -16,7 +16,6 @@ class ComposeViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
     @IBOutlet weak var memoTextView: UITextView!
     
     @IBAction func save(_ sender: Any) {
@@ -55,7 +54,6 @@ class ComposeViewController: UIViewController {
             NotificationCenter.default.removeObserver(token)
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +96,6 @@ class ComposeViewController: UIViewController {
             inset = strongSelf.memoTextView.scrollIndicatorInsets
             inset.bottom = 0
             strongSelf.memoTextView.scrollIndicatorInsets = inset
-            
         })
         
     }
@@ -109,6 +106,7 @@ class ComposeViewController: UIViewController {
         
         navigationController?.presentationController?.delegate = self
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissComposeView"), object: nil)
@@ -117,8 +115,6 @@ class ComposeViewController: UIViewController {
         
         navigationController?.presentationController?.delegate = nil
     }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -128,7 +124,6 @@ class ComposeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 // text 편집될때마다 반복 호출

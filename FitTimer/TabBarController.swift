@@ -13,7 +13,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
             
         selectedIndex = 1 // 실행시 첫 화면
-        
     }
 
 }

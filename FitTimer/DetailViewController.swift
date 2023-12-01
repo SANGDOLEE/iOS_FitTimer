@@ -36,7 +36,6 @@ class DetailViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination.children.first as? ComposeViewController {
             vc.editTarget = memo
@@ -52,13 +51,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         token = NotificationCenter.default.addObserver(forName: ComposeViewController.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
             self?.memoTableView.reloadData()
         })
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -68,9 +65,7 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
-
 
 extension DetailViewController: UITableViewDataSource {
     
